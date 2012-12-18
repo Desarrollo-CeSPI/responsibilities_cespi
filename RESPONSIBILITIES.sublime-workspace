@@ -219,6 +219,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/views/layouts/application.html.erb",
+			"settings":
+			{
+				"buffer_size": 2054,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/views/layouts/_footer.html.erb",
+			"settings":
+			{
+				"buffer_size": 222,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -545,8 +561,63 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/views/layouts/application.html.erb",
+					"settings":
+					{
+						"buffer_size": 2054,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1553,
+								1553
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 564.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/views/layouts/_footer.html.erb",
+					"settings":
+					{
+						"buffer_size": 222,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								222,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -592,12 +663,16 @@
 		"selected_items":
 		[
 			[
-				"ques",
-				"app/models/question.rb"
+				"footer",
+				"app/views/layouts/_footer.html.erb"
 			],
 			[
 				"appli",
-				"app/assets/javascripts/application.js"
+				"app/views/layouts/application.html.erb"
+			],
+			[
+				"ques",
+				"app/models/question.rb"
 			],
 			[
 				"apli",
@@ -1098,10 +1173,6 @@
 			[
 				"preguntas",
 				"apps/frontend/templates/_preguntas.php"
-			],
-			[
-				"_showpre",
-				"apps/frontend/modules/pregunta/templates/_showPreguntas.php"
 			]
 		],
 		"width": 0.0
