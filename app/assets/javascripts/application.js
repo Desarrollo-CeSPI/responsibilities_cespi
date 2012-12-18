@@ -16,3 +16,11 @@
 //= require jquery.ui.all
 //= require jquery.ui.datepicker-es
 //= require_tree .
+
+$(function() {
+  $("#questionnaire_question_tokens").tokenInput("/questionnaires.json", {
+    crossDomain: false,
+    prePopulate: $("#questionnaire_question_tokens").data("pre"),
+    theme: "facebook"
+  });
+});

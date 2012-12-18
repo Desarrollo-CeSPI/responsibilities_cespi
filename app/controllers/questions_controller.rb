@@ -2,8 +2,8 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
-
+     @questions = Question.all
+    
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @questions }

@@ -1,3 +1,11 @@
+
+<style type="text/css">
+
+.bs-docs-example::after{
+  content:"Respuestas" !important;
+}
+
+</style>
 <%- model_class = Question -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human %></h1>
@@ -9,6 +17,13 @@
   <dt><strong><%= model_class.human_attribute_name(:question_type) %>:</strong></dt>
   <dd><%= @question.question_type %></dd>
 </dl>
+
+<div class="bs-docs-example">
+  <% @question.answers.each do |answer| %>
+    <p class="text-info"><%= answer.name %></p>
+  <% end %>
+</div>
+
 
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),

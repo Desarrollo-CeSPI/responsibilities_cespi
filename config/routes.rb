@@ -5,6 +5,7 @@ ResponsibilitiesCespi::Application.routes.draw do
   end
 
   resources :questionnaires
+  
 
   root to: 'questions#index'
 

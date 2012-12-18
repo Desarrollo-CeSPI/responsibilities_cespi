@@ -6,14 +6,21 @@
     <%= f.input :date_to, as: :ui_date_picker %>
 
     <div class="control-group">
-   
     </div>
-
   </div>
+
   
+<p>
+  <%= f.label :question_tokens, "Preguntas" %><br />
+  <%= f.text_field :question_tokens, "data-pre" => @questionnaire.questions.map(&:attributes).to_json %>
+</p>
+
   <div class="form-actions">
       <%= link_to t('views.scaffold.back_html'), questionnaires_path, class: 'btn secondary' %>
       <%= f.button :submit, class: 'btn primary' %>
   </div>
+
+
+  
 <% end %>
 

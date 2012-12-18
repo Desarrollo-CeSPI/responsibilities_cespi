@@ -4,9 +4,10 @@ class QuestionnairesController < ApplicationController
   def index
     @questionnaires = Questionnaire.all
 
+    @questions = Question.where("name like ?", "%#{params[:q]}%")
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @questionnaires }
+      format.json { render json:  @questions.map(&:attributes) }
     end
   end
 

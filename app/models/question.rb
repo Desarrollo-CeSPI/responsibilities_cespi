@@ -1,6 +1,8 @@
 class Question < ActiveRecord::Base
   # accessors
-  attr_accessible :name, :question_type, :answers, :answers_attributes
+  attr_accessible :name, :question_type, :answers, :answers_attributes, :question_tokens
+  
+  attr_reader :question_tokens
 
   # associations
   has_many :questionnaire_questions
@@ -13,6 +15,14 @@ class Question < ActiveRecord::Base
   # validates
   validates :name, :question_type, presence: true
   validate :check_has_answer
+
+  # methods
+  
+  def question_tokens=(ids)
+    self.question_ids = ids.split(",")
+  end  
+
+
 
   private
 
