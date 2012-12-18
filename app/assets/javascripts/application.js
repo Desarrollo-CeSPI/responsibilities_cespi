@@ -13,9 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require bootstrap-datepicker
+//= require jquery.ui.all
+//= require jquery.ui.datepicker-es
 //= require_tree .
-
-$(document).ready(function() {
-   $('.datepicker').datepicker({ "format" : "dd-mm-yyyy", "autoclose" : true });
- });
