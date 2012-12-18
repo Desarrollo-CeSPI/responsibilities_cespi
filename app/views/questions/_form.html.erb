@@ -1,20 +1,23 @@
-<%= form_for @question, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :name, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :question_type, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.select(:question_type, %w{Administrador Propia Anonima}) %>
-    </div>
-  </div>
+<%= simple_form_for @question, html: { class: 'form-horizontal' } do |f| %>
+  <%= f.error_notification %> 
 
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :question_type, as: :select, collection: [:Administrador, :Propia, :Anónima] %>
+    <hr>
+    <% if @question.errors[:base].any? %>
+      <p class="alert alert-error"><%= @question.errors[:base].join %></p>
+    <% end %>
+  
+    <%= f.fields_for :answers do |builder| %>
+      <%= render "answer_fields", f: builder, parent_f: f %>
+    <% end %>
+
+    <%= link_to_add_fields "Add answer", f, :answers %>
+  </div>
+  
   <div class="form-actions">
-    <%= f.submit nil, :class => 'btn btn-primary' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                questions_path, :class => 'btn' %>
+      <%= link_to t('views.scaffold.back_html'), questions_path, class: 'btn secondary' %>
+      <%= f.button :submit, class: 'btn primary' %>
   </div>
 <% end %>

@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
-  question_type: MyString
+question_one:
+  name: Como te ves en ruby ?
+  question_type: Administrador
 
-two:
-  name: MyString
-  question_type: MyString
+question_two:
+  name: Como te ves en php ?
+  question_type: Anónima
+
+question_three:
+  name: Pregunta 3
+  question_type: Propia

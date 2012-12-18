@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  name: MyString
+questionnaire_one:
+  name: Questionario 1
   date_from: 2012-12-17
   date_to: 2012-12-17
 
-two:
-  name: MyString
+questionnaire_two:
+  name: Questionario 2
   date_from: 2012-12-17
   date_to: 2012-12-17
