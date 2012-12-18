@@ -10,9 +10,6 @@ gem 'bootstrap-sass', '2.0.0'
 gem "twitter-bootstrap-rails" 
 gem 'bootstrap-datepicker-rails'
 
-
-gem "twitter-bootstrap-rails"
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'mysql2'
