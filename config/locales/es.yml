@@ -4,4 +4,22 @@ es:
       default: "%d/%m/%Y"
   time:
     formats: 
-      default: "%d/%m/%Y %H:%M"      
+      default: "%d/%m/%Y %H:%M"
+
+  # ACTIVERECORD
+  activerecord:
+    attributes:
+      questionnaire:
+        date_from: Fecha de apertura
+        date_to: Fecha de cierre
+        name: Nombre
+
+  # VIEWS
+  views:
+    questionnaires:
+      index:
+        title: Cuestionarios
+    scaffold:
+      new_html: <i class="icon-plus"></i> Nuevo
+      edit_html: <i class="icon-edit"></i> Editar
+      delete_html: <i class="icon-remove"></i> Eliminar

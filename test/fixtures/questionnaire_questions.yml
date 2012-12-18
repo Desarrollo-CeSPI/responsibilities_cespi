@@ -1,11 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  weight: 1
-  question: 
-  questionnaire: 
+  weight: 10
+  question: question_one
+  questionnaire: questionnaire_one
 
 two:
-  weight: 1
-  question: 
-  questionnaire: 
+  weight: 15
+  question: question_two
+  questionnaire: questionnaire_one
+
+three:
+  weight: 8
+  question: question_three
+  questionnaire: questionnaire_one

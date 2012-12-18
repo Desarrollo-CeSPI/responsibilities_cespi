@@ -1,9 +1,17 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
-one:
-  question: 
-  name: MyString
+answer_one:
+  question: question_one
+  name: Mal
 
-two:
-  question: 
-  name: MyString
+answer_two:
+  question: question_one
+  name: Bien
+
+answer_three:
+  question: question_one
+  name: Muy bien
+
+answer_four:
+  question: question_two
+  name: Odio PHP

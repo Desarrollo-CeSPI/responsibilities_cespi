@@ -2,10 +2,10 @@
 
 one:
   value: 1
-  question: 
-  answer: 
+  questionnaire: questionnaire_one
+  answer: answer_one
 
 two:
   value: 1
-  question: 
-  answer: 
+  questionnaire: questionnaire_one
+  answer: answer_two
