@@ -3,5 +3,5 @@ class Question < ActiveRecord::Base
 
   has_many :questionnaire_questions
   has_many :questionnaire , through: :questionnaire_questions
-
+  has_many :answers
 end
