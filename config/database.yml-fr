@@ -7,11 +7,10 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-#  database: cargos-y-descargos_development
-  database: responsabilties
+  database: responsibilties
   pool: 5
   username: root
-  password: im
+  password: dev
 
   
 
@@ -22,9 +21,9 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: responsabilties_test
+  database: responsibilties_test
   pool: 5
   username: root
-  password: im
+  password: dev
   socket: /var/run/mysqld/mysqld.sock
 
