@@ -41,6 +41,8 @@ class QuestionnairesController < ApplicationController
   # POST /questionnaires.json
   def create
     @questionnaire = Questionnaire.new(params[:questionnaire])
+    
+    # raise params[:questionnaire].to_yaml
 
     respond_to do |format|
       if @questionnaire.save

@@ -12,7 +12,7 @@
   <div class="control-group">
     <%= f.label :date_from, :class => 'control-label' %>
     <div class="controls">
-      <%= text_field_tag :date_from, nil, 
+      <%= f.text_field :date_from, 
                         'data-behaviour' => 'datepicker',
                         :class => 'datepicker input-medium', 
                         'placeholder' => 'Date from'
@@ -22,7 +22,7 @@
   <div class="control-group">
     <%= f.label :date_to, :class => 'control-label' %>
     <div class="controls">
-      <%= text_field_tag :date_from, nil, 
+      <%= f.text_field :date_to, 
                         'data-behaviour' => 'datepicker',
                         :class => 'datepicker input-medium', 
                         'placeholder' => 'Date to'
@@ -31,7 +31,7 @@
   </div>
 
    <div class="control-group">
-      <%= f.collection_select(:questionnaire_question_ids, Question.all, :id, :name, {}, multiple: true) %>
+      <%= f.collection_select(:question_ids, Question.all, :id, :name, {}, multiple: true) %>
    </div>
 
   <div class="form-actions">
