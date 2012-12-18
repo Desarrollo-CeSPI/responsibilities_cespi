@@ -34,4 +34,6 @@ ResponsibilitiesCespi::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.i18n.available_locales = ['es-AR', :es]
 end
