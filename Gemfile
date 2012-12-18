@@ -15,8 +15,8 @@ gem "twitter-bootstrap-rails"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
-
-gem 'sqlite3'
+gem 'mysql2'
+# gem 'sqlite3'
 
 
 gem 'faker'
