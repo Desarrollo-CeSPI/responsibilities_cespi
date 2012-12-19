@@ -7,8 +7,11 @@ class Question < ActiveRecord::Base
   has_many :questionnaire , through: :questionnaire_questions
   has_many :answers, :dependent => :destroy # borrado en cascada por software
 
-  # nested attributes
-  accepts_nested_attributes_for :answers
+
+  # nested attributes 
+  # reject_if no guarda una answer vacía (ni la valida)
+  # allow_destroy permite eliminarla
+  accepts_nested_attributes_for :answers, reject_if: :all_blank, allow_destroy: true
 
   # validates -> from RoR; validate -> own validations
   validates :name, :question_type, presence: true

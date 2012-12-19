@@ -4,7 +4,7 @@ gem 'rails'
 
 gem 'bootstrap-sass', '2.0.0'
 
-
+gem 'devise'
 
 # TO-DO: install this gems
 gem "twitter-bootstrap-rails" 
