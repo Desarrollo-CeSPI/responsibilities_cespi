@@ -10,7 +10,7 @@ class Question < ActiveRecord::Base
   # nested attributes
   accepts_nested_attributes_for :answers
 
-  # validates
+  # validates -> from RoR; validate -> own validations
   validates :name, :question_type, presence: true
   validate :check_has_answer
 
