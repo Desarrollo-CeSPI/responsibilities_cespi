@@ -33,4 +33,15 @@ class AnswerTest < ActiveSupport::TestCase
     assert_present answer.errors[:percentage]
   end
 
+  test "percentage should be an integer" do 
+    answer            = Answer.new
+    answer.name       = answers(:answer_one).name
+    answer.question   = answers(:answer_one).question
+    answer.percentage = "pepe"
+
+    answer.invalid?
+    assert_equal 1, answer.errors.size
+    assert_present answer.errors[:percentage]
+  end
+
 end

@@ -13,6 +13,10 @@ es:
         date_from: Fecha de apertura
         date_to: Fecha de cierre
         name: Nombre
+      question:
+        name: Nombre
+        question_type: Tipo de pregunta
+        created_at: Creada
 
   # VIEWS
   views:
@@ -25,3 +29,7 @@ es:
       new_html: <i class="icon-plus"></i> Nuevo
       edit_html: <i class="icon-edit"></i> Editar
       delete_html: <i class="icon-remove"></i> Eliminar
+    questions:
+      index:
+        title: Preguntas
+      empty: No hay preguntas

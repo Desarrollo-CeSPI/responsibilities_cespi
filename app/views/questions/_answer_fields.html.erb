@@ -3,4 +3,11 @@
     <%= f.input :name %>
     <%= f.input :percentage %>
   </p>
+
+  <% if !f.object.new_record? && (parent_f.object.answers.size > 1) %> 
+    <div class="destroy-combo">
+      <%= f.input :_destroy, as: :boolean, label: "Destroy answer" %> 
+    </div>
+  <% end %>
+
 </div>

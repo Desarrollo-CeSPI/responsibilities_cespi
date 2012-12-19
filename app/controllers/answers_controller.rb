@@ -1,4 +1,6 @@
 class AnswersController < ApplicationController
+  before_filter :authenticate_user!
+  
   # GET /answers
   # GET /answers.json
   def index
