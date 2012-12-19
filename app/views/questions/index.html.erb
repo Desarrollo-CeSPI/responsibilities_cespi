@@ -32,6 +32,5 @@
   <p><%=t 'views.questions.empty' %></p>
 <% end %>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
-            new_question_path,
+<%= link_to t('views.scaffold.new_html'), new_question_path,
             :class => 'btn btn-primary' %>
