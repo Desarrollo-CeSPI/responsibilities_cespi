@@ -17,10 +17,33 @@
 //= require jquery.ui.datepicker-es
 //= require_tree .
 
+
+function flash(slider_id){
+  $(slider_id).removeClass("animated flash");
+  $(slider_id).addClass("animated flash");
+}
+
+function updateQuestionWightValueInModel(questionnaire_id,question_id,value,slider_id){
+  $.ajax({
+    url: "/rest_controller/"+questionnaire_id+"/"+question_id+"/"+value,
+  }).done(function() { 
+    flash(slider_id);
+  });
+}
+
+function updateAnswerWightValueInModel(answer_id,value,slider_id){
+  $.ajax({
+    url: "/rest_controller/"+answer_id+"/"+value,
+  }).done(function() { 
+    flash(slider_id);
+  });
+}
+
 $(function() {
   $("#questionnaire_question_tokens").tokenInput("/questionnaires.json", {
     crossDomain: false,
+    propertyToSearch: 'name_and_type',
     prePopulate: $("#questionnaire_question_tokens").data("pre"),
-    theme: "facebook"
+    theme: "facebook",
   });
 });

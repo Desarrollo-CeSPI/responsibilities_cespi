@@ -19,6 +19,8 @@ es:
     questionnaires:
       index:
         title: Cuestionarios
+      questions:
+        title: Preguntas
     scaffold:
       new_html: <i class="icon-plus"></i> Nuevo
       edit_html: <i class="icon-edit"></i> Editar

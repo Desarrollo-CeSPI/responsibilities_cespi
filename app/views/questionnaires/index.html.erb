@@ -12,7 +12,7 @@
     <tbody>
       <% @questionnaires.each do |questionnaire| %>
         <tr>
-          <td><%= questionnaire.name %></td>
+          <td><%= link_to questionnaire.name, questionnaire_path(questionnaire) %></td>
           <td><%= questionnaire.date_from %></td>
           <td><%= questionnaire.date_to %></td>
           <td>

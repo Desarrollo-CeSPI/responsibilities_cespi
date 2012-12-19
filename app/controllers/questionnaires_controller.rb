@@ -5,9 +5,10 @@ class QuestionnairesController < ApplicationController
     @questionnaires = Questionnaire.all
 
     @questions = Question.where("name like ?", "%#{params[:q]}%")
+
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json:  @questions.map(&:attributes) }
+      format.json { render json: @questions.all.to_json(:only => [:id, :name_and_type], :methods => [:name_and_type]) }
     end
   end
 

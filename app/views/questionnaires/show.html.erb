@@ -12,6 +12,9 @@
   <dd><%= @questionnaire.date_to %></dd>
 </dl>
 
+<%= render partial: 'layouts/page_header', locals: { title: t('views.questionnaires.questions.title') } %>
+<%= render partial: 'questionnaire_questions' %>
+
 <div class="form-actions">
   <%= link_to t('.back', :default => t("helpers.links.back")),
               questionnaires_path, :class => 'btn'  %>

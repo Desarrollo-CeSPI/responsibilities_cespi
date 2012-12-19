@@ -20,7 +20,34 @@
 
 <div class="bs-docs-example">
   <% @question.answers.each do |answer| %>
-    <p class="text-info"><%= answer.name %></p>
+    <p class="text-info">
+        <%= answer.name %>
+        &nbsp;
+        <span id="weight_slider_<%= answer.id %>_badge" class="badge badge-success"><%= answer.percentage %></span>
+    </p>
+    
+    <div id="weight_slider_<%= answer.id %>"></div>
+    <script>
+        $(function() {
+            var slider_id = "#weight_slider_<%= answer.id %>";
+            // setup master volume
+            $( slider_id ).slider({
+                value: <%= answer.percentage %>,
+                orientation: "horizontal",
+                range: "min",
+                animate: true,
+                change: function( event, ui ) {
+                   var new_value = $(slider_id).slider( "option", "value" );
+                   $( slider_id+"_badge" ).html(new_value);
+                   updateAnswerWightValueInModel('<%= answer.id %>',new_value,slider_id);
+                },
+                slide: function( event, ui ) {
+                   $(  slider_id+"_badge"  ).html( ui.value );
+                }                
+            });
+        });
+    </script>
+
   <% end %>
 </div>
 

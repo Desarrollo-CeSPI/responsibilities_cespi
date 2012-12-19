@@ -6,6 +6,10 @@ class Questionnaire < ActiveRecord::Base
   has_many :questionnaire_questions
   has_many :questions , through: :questionnaire_questions
 
+  accepts_nested_attributes_for :questionnaire_questions
+
+
+
   validates :date_from, :date_to, :name, presence: true
 
 

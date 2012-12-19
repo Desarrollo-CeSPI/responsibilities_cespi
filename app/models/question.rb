@@ -1,12 +1,13 @@
 class Question < ActiveRecord::Base
   # accessors
-  attr_accessible :name, :question_type, :answers, :answers_attributes, :question_tokens
+  attr_accessible :name, :question_type, :answers, :answers_attributes, :question_tokens, :name_and_type
   
   attr_reader :question_tokens
 
   # associations
   has_many :questionnaire_questions
   has_many :questionnaire , through: :questionnaire_questions
+  
   has_many :answers, :dependent => :destroy # borrado en cascada por software
 
   # nested attributes
@@ -22,7 +23,9 @@ class Question < ActiveRecord::Base
     self.question_ids = ids.split(",")
   end  
 
-
+  def name_and_type
+    "#{self.name} (#{self.question_type})"
+  end
 
   private
 
