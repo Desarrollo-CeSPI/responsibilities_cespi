@@ -1,5 +1,5 @@
 require 'test_helper'
-
+include Devise::TestHelpers
 class UsersControllerTest < ActionController::TestCase
   setup do
     @user = users(:one)

@@ -1,5 +1,5 @@
 require 'test_helper'
-
+include Devise::TestHelpers
 class QuestionsControllerTest < ActionController::TestCase
   setup do
     @question = questions(:question_one)
