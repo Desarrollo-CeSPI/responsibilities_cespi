@@ -14,20 +14,12 @@ class QuestionTest < ActiveSupport::TestCase
   end
 
   test "should have at least one answer" do 
-    question                = Question.new
-    question.name           = questions(:question_one).name
-    question.question_type  = questions(:question_one).question_type
+    question           = questions(:question_one)
+    question.answers = []
 
-    answer                  = Answer.new
-    answer.name             = "Un nombre"
-    answer.question         = question
-    answer.save
-
-    # raise question.errors.to_yaml
-
-    assert question.save
-    assert question.valid?
-    assert_equal 1, question.answers.size
+    refute question.valid?
+    assert_present question.errors[:answer]
+    refute question.save
   end
 
 end
