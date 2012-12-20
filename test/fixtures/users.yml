@@ -1,12 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  user_name: MyString
-  first_name: MyString
-  last_name: MyString
+  user_name: admin
+  first_name: admin
+  last_name: admin
+  email: admin@pepe.com
 
 two:
-  user_name: MyString
-  first_name: MyString
-  last_name: MyString
+  user_name: Emi
+  first_name: Emi
+  last_name: Corronsss
   email: pepe@pepe.com
