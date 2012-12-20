@@ -29,7 +29,6 @@ class UserTest < ActiveSupport::TestCase
     user.email      = users(:one).email
 
     assert user.invalid?
-    # raise user.errors.to_yaml
     assert_equal 2, user.errors.size
     assert_present user.errors[:user_name]
     assert_present user.errors[:email]
