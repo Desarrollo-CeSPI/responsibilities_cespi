@@ -10,7 +10,7 @@ class QuestionTest < ActiveSupport::TestCase
     assert_present question.errors[:name]
     assert_present question.errors[:question_type]
     assert_present question.errors[:answer]
-    refute question.save!
+    refute question.save
   end
 
   test "should have at least one answer" do 
@@ -21,11 +21,11 @@ class QuestionTest < ActiveSupport::TestCase
     answer                  = Answer.new
     answer.name             = "Un nombre"
     answer.question         = question
-    answer.save!
+    answer.save
 
     # raise question.errors.to_yaml
-    question.save!
 
+    assert question.save
     assert question.valid?
     assert_equal 1, question.answers.size
   end
