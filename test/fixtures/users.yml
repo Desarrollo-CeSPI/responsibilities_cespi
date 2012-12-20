@@ -9,3 +9,4 @@ two:
   user_name: MyString
   first_name: MyString
   last_name: MyString
+  email: pepe@pepe.com

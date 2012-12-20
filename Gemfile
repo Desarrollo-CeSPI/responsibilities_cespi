@@ -29,6 +29,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'libv8', '~> 3.11.8.3'
 gem 'jquery-rails'
 
 gem 'simple_form'
