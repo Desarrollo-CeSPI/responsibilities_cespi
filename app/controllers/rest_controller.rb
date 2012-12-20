@@ -1,5 +1,5 @@
 class RestController < ApplicationController
-
+  before_filter :authenticate_user!
   def updateQuestionWeight
 
     @questionnaire = Questionnaire.find(params[:questionnaire_id])

@@ -1,11 +1,14 @@
 require 'test_helper'
+include Devise::TestHelpers
 
 class RestControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    sign_in users(:one)
+  end
+
 
   test "should update answer percentage" do
+  	
     @answer = Answer.all.first
 
     old_pertentage = @answer.percentage
@@ -17,6 +20,7 @@ class RestControllerTest < ActionController::TestCase
   end
 
   test "should update questionnaire_question weight" do
+
     @questionnaire = Questionnaire.all.first
 
     old_value = @questionnaire.questionnaire_questions.first.weight
