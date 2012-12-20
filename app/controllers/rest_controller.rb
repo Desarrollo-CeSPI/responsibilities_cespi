@@ -24,10 +24,20 @@ class RestController < ApplicationController
 
     @answer.save();
 
+
     respond_to do |format|
       format.json { render json: @answer}
     end
 
+  end
+
+  def allQuestions
+
+    @questions = Question.find(:all,:order => "question_type")
+
+    respond_to do |format|
+      format.json { render json: @questions.to_json(:only => [:id, :name_and_type], :methods => [:name_and_type]) }
+    end
   end
 
 end

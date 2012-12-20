@@ -3,15 +3,19 @@
 answer_one:
   question: question_one
   name: Mal
+  percentage: 56
 
 answer_two:
   question: question_one
   name: Bien
+  percentage: 56
 
 answer_three:
   question: question_one
   name: Muy bien
+  percentage: 56
 
 answer_four:
   question: question_two
   name: Odio PHP
+  percentage: 56

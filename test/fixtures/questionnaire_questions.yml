@@ -8,9 +8,9 @@ one:
 two:
   weight: 15
   question: question_two
-  questionnaire: questionnaire_one
+  questionnaire: questionnaire_two
 
 three:
   weight: 8
-  question: question_three
+  question: questionnaire_one
   questionnaire: questionnaire_one

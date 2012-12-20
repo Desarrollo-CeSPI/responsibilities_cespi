@@ -3,6 +3,7 @@ class QuestionnairesController < ApplicationController
   
   # GET /questionnaires
   # GET /questionnaires.json
+
   def index
     @questionnaires = Questionnaire.all
 
@@ -75,6 +76,15 @@ class QuestionnairesController < ApplicationController
     end
   end
 
+  def answer
+    @questionnaire = Questionnaire.where("date_from <= ? AND date_to >= ?", Date.today , Date.today ).first
+
+    respond_to do |format|
+      format.html
+    end
+
+
+  end
   # DELETE /questionnaires/1
   # DELETE /questionnaires/1.json
   def destroy

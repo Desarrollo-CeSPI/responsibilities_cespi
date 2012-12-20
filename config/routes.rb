@@ -14,7 +14,9 @@ ResponsibilitiesCespi::Application.routes.draw do
 
   get "/rest_controller/:questionnaire_id/:question_id/:value" => "rest#updateQuestionWeight"
   get "/rest_controller/:answer_id/:value" => "rest#updateAnswerWeight"
-  
+  get "/rest_controller/allQuestions" => "rest#allQuestions"
+
+  get "/answer_questionnaire" => "questionnaires#answer"
 
   root to: 'questions#index'
 
