@@ -7,7 +7,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: responsibilties
+  database: responsibilities
   pool: 5
   username: root
   password: dev
@@ -21,7 +21,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: responsibilties_test
+  database: responsibilities_test
   pool: 5
   username: root
   password: dev

@@ -33,3 +33,21 @@ es:
       index:
         title: Preguntas
       empty: No hay preguntas
+
+  devise:
+    failure:
+      already_authenticated: 'Ya inició sesión.'
+      unauthenticated: 'Inicie sesión para poder continuar.'
+      locked: 'Su cuenta está bloqueada.'
+      invalid: 'Nombre de usuario o contraseña incorrecto/s.'
+      invalid_token: 'Token de autenticación inválido.'
+      timeout: 'Su sesión expiró, por favor vuelva a loguearse.'
+    sessions:
+      user:
+        signed_in: 'Ha iniciado sesión exitosamente.'
+        signed_out: 'Sesión cerrada exitosamente.'
+    passwords:
+      updated: 'Se cambió su contraseña exitosamente.'
+      updated_not_active: 'Se cambió su contraseña exitosamente.'
+    sign_in: 'Iniciar sesión'
+    sign_out: 'Cerrar sesión'

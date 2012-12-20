@@ -8,28 +8,28 @@
       </tr>
     </thead>
     <tbody>
-      <% @questionnaire.questionnaire_questions.each do |question| %>
+      <% @questionnaire.questionnaire_questions.each do |questionnaire_question| %>
         <tr>
-          <td><%= question.question.name %></td>
-          <td><%= question.question.question_type %></td>
+          <td><%= questionnaire_question.question.name %></td>
+          <td><%= questionnaire_question.question.question_type %></td>
           <td>
-              <div id="weight_slider_<%= question.id %>"></div>
-              <span id="weight_slider_<%= question.id %>_badge" class="badge badge-success right"><%= question.weight %></span>
+              <div id="weight_slider_<%= questionnaire_question.id %>"></div>
+              <span id="weight_slider_<%= questionnaire_question.id %>_badge" class="badge badge-success right"><%= questionnaire_question.weight %></span>
           </td>
         </tr>
           <script>
               $(function() {
-                  var slider_id = "#weight_slider_<%= question.id %>";
+                  var slider_id = "#weight_slider_<%= questionnaire_question.id %>";
                   // setup master volume
                   $( slider_id ).slider({
-                      value: <%= question.weight %>,
+                      value: <%= questionnaire_question.weight %>,
                       orientation: "horizontal",
                       range: "min",
                       animate: true,
                       change: function( event, ui ) {
                          var new_value = $( slider_id).slider( "option", "value" );
                          $( slider_id+"_badge" ).html(new_value);
-                         updateQuestionWightValueInModel('<%= @questionnaire.id %>','<%= question.question_id %>',new_value,slider_id);
+                         updateQuestionWightValueInModel('<%= @questionnaire.id %>','<%= questionnaire_question.question_id %>',new_value,slider_id);
                       },
                       slide: function( event, ui ) {
                          $(  slider_id+"_badge"  ).html( ui.value );
