@@ -83,7 +83,6 @@ class QuestionnairesController < ApplicationController
       format.html
     end
 
-
   end
   # DELETE /questionnaires/1
   # DELETE /questionnaires/1.json

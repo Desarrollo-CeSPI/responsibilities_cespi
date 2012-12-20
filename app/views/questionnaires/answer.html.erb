@@ -1,0 +1,13 @@
+<%= render partial: 'layouts/page_header', locals: { title: t('views.questions.index.title') } %>
+<table class="table table-stripped">
+  <thead>
+    <th></th>
+  </thead>
+  <tbody>
+    <% @questionnaire.questions.order('question_type').all.each do |question| %>
+      <tr>
+        <%= render 'question_answers',  question: question  %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
