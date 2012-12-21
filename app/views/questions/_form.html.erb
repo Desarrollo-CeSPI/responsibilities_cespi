@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :question_type, as: :select, collection: [:Administrador, :Propia, :Anónima] %>
+    <%= f.input :question_type, as: :select, collection: [:Administrador, :Propia, :Anonima] %>
     <hr>
     <% if @question.errors[:answer].any? %>
       <p class="alert alert-error"><%= @question.errors[:answer].join %></p>

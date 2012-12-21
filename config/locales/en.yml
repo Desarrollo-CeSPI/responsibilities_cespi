@@ -1,8 +1,14 @@
-# Sample localization file for English. Add more files in this directory for other locales.
-# See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
+  activerecord:
+    attributes:
+      questionnaire:
+        date_from: Fecha de apertura
+        date_to: Fecha de cierre
+        name: Nombre
+      question:
+        name: Nombre
+        question_type: Tipo de pregunta
+        created_at: Creada
 
-en:
-  hello: "Hello world"
   # VIEWS
   views:
     questionnaires:
@@ -10,7 +16,33 @@ en:
         title: Cuestionarios
       questions:
         title: Preguntas
+        empty: Este cuestionario no tiene ninguna pregunta
+        propias: Preguntas acerca tuyo
+      empty: No hay ningun cuestionario activo
+
     scaffold:
       new_html: <i class="icon-plus"></i> Nuevo
       edit_html: <i class="icon-edit"></i> Editar
       delete_html: <i class="icon-remove"></i> Eliminar
+    questions:
+      index:
+        title: Preguntas
+      empty: No hay preguntas
+
+  devise:
+    failure:
+      already_authenticated: 'Ya inició sesión.'
+      unauthenticated: 'Inicie sesión para poder continuar.'
+      locked: 'Su cuenta está bloqueada.'
+      invalid: 'Nombre de usuario o contraseña incorrecto/s.'
+      invalid_token: 'Token de autenticación inválido.'
+      timeout: 'Su sesión expiró, por favor vuelva a loguearse.'
+    sessions:
+      user:
+        signed_in: 'Ha iniciado sesión exitosamente.'
+        signed_out: 'Sesión cerrada exitosamente.'
+    passwords:
+      updated: 'Se cambió su contraseña exitosamente.'
+      updated_not_active: 'Se cambió su contraseña exitosamente.'
+    sign_in: 'Iniciar sesión'
+    sign_out: 'Cerrar sesión'

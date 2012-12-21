@@ -1,0 +1,12 @@
+<table class="table table-stripped">
+  <thead>
+    <th></th>
+  </thead>
+  <tbody>
+    <% questions.order('question_type').all.each do |question| %>
+      <tr>
+        <%= render 'question_answers',  question: question  %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
