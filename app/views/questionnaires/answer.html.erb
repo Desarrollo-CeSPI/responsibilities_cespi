@@ -10,9 +10,9 @@
 
     <% if @questionnaire.questions_anonimas.any? %>
       <% @users.each do |user| %>
-        <%= render partial: 'layouts/page_header', locals: { title: "#{user.first_name}, #{user.last_name}" } %>
+        <%= render partial: 'layouts/page_header', locals: { title: "#{user.first_name}, #{user.last_name}",sub_title: t('views.questionnaire.questions.anonimas') } %>
 
-        <%= render partial: 'layouts/page_header', locals: { sub_title: t('views.questionnaire.questions.propias') } %>
+        
         <%= render partial: 'questions_list_for_answer', locals: { questions: @questionnaire.questions_anonimas } %>
       <% end %>
     <% end %>

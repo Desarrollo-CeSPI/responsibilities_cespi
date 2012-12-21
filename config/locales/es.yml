@@ -27,6 +27,7 @@ es:
         title: Preguntas
         empty: Este cuestionario no tiene ninguna pregunta
         propias: Preguntas acerca tuyo
+        anonimas: Preguntas sobre los demas
       empty: No hay ningun cuestionario activo
 
     scaffold:
