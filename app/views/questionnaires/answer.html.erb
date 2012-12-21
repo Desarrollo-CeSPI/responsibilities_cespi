@@ -1,13 +1,28 @@
-<%= render partial: 'layouts/page_header', locals: { title: t('views.questions.index.title') } %>
-<table class="table table-stripped">
-  <thead>
-    <th></th>
-  </thead>
-  <tbody>
-    <% @questionnaire.questions.order('question_type').all.each do |question| %>
-      <tr>
-        <%= render 'question_answers',  question: question  %>
-      </tr>
+<% if @questionnaire %>
+
+  <% if @questionnaire.questions.any? %>
+    <%= render partial: 'layouts/page_header', locals: { title: @questionnaire.name } %>
+
+    <% if @questionnaire.questions_propias.any? %>
+      <%= render partial: 'layouts/section_header', locals: { title: t('views.questionnaire.questions.propias') } %>
+      <%= render partial: 'questions_list_for_answer', locals: { questions: @questionnaire.questions_propias } %>
     <% end %>
-  </tbody>
-</table>
+
+    <% if @questionnaire.questions_anonimas.any? %>
+      <% @users.each do |user| %>
+        <%= render partial: 'layouts/page_header', locals: { title: "#{user.first_name}, #{user.last_name}" } %>
+
+        <%= render partial: 'layouts/page_header', locals: { sub_title: t('views.questionnaire.questions.propias') } %>
+        <%= render partial: 'questions_list_for_answer', locals: { questions: @questionnaire.questions_anonimas } %>
+      <% end %>
+    <% end %>
+  <% else %>
+    <h2 style="margin-top: 50px;">
+      <%= t('views.questionnaires.questions.empty') %>
+    </h2>
+  <% end %>
+<% else %>
+  <h2 style="margin-top: 50px;">
+    <%= t('views.questionnaires.empty') %>
+  </h2>
+<% end %>

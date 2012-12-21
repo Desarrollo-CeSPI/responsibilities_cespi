@@ -25,6 +25,10 @@ es:
         title: Cuestionarios
       questions:
         title: Preguntas
+        empty: Este cuestionario no tiene ninguna pregunta
+        propias: Preguntas acerca tuyo
+      empty: No hay ningun cuestionario activo
+
     scaffold:
       new_html: <i class="icon-plus"></i> Nuevo
       edit_html: <i class="icon-edit"></i> Editar
