@@ -19,4 +19,20 @@ class Questionnaire < ActiveRecord::Base
     self.question_ids = ids.split(",")
   end  
 
+  def questions_custom(param)
+    self.questions.where("question_type = ?",param)
+  end
+
+
+  def questions_propias()
+    questions_custom(:Propia)
+  end
+
+  def questions_anonimas
+    questions_custom(:Anonima)
+  end
+
+  def questions_administrador
+    questions_custom(:Administrador)
+  end
 end

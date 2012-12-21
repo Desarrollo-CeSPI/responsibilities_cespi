@@ -10,6 +10,11 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :user_name
 
   # validation
+<<<<<<< HEAD
    validates :first_name, :last_name, :user_name, presence: :true, on: :update
    validates :user_name, uniqueness: :true, on: :update
+=======
+  # validates :first_name, :last_name, :user_name, presence: :true
+  # validates :user_name, uniqueness: :true
+>>>>>>> 364af39ae1116d14437dd5ea8fc5a4fb90926df7
 end

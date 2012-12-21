@@ -78,7 +78,7 @@ class QuestionnairesController < ApplicationController
 
   def answer
     @questionnaire = Questionnaire.where("date_from <= ? AND date_to >= ?", Date.today , Date.today ).first
-
+    @users         = User.where("id != ?",current_user.id)
     respond_to do |format|
       format.html
     end
