@@ -4,6 +4,7 @@ include Devise::TestHelpers
 class RestControllerTest < ActionController::TestCase
   setup do
     sign_in users(:one)
+    
   end
 
 

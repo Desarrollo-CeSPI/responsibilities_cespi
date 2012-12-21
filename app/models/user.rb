@@ -10,6 +10,6 @@ class User < ActiveRecord::Base
                   :password, :password_confirmation, :remember_me
 
   # validation
-  validates :first_name, :last_name, :user_name, presence: :true
-  validates :user_name, uniqueness: :true
+  # validates :first_name, :last_name, :user_name, presence: :true
+  # validates :user_name, uniqueness: :true
 end
