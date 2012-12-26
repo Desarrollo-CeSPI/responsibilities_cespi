@@ -21,9 +21,9 @@
       empty: No hay ningun cuestionario activo
 
     scaffold:
-      new_html: <i class="icon-plus"></i> Nuevo
+      new_html: <i class="icon-white icon-plus"></i> Nuevo
       edit_html: <i class="icon-edit"></i> Editar
-      delete_html: <i class="icon-remove"></i> Eliminar
+      delete_html: <i class="icon-white icon-remove"></i> Eliminar
     questions:
       index:
         title: Preguntas

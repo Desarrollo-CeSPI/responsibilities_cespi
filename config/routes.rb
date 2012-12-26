@@ -18,7 +18,7 @@ ResponsibilitiesCespi::Application.routes.draw do
 
   get "/answer_questionnaire" => "questionnaires#answer"
 
-  root to: 'questions#index'
+  root to: 'questionnaires#answer'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
