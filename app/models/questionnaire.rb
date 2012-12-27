@@ -5,7 +5,7 @@ class Questionnaire < ActiveRecord::Base
 
   # associations
   has_many :questionnaire_questions
-  has_many :questions , through: :questionnaire_questions
+  has_many :questions, through: :questionnaire_questions
 
   # nested attributes 
   accepts_nested_attributes_for :questionnaire_questions
@@ -20,7 +20,7 @@ class Questionnaire < ActiveRecord::Base
   end  
 
   def questions_custom(param)
-    self.questions.where("question_type = ?",param)
+    self.questions.where("question_type = ?", param)
   end
 
 
