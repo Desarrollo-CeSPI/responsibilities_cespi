@@ -1,5 +1,4 @@
 class QuestionnairesController < ApplicationController
-  before_filter :authenticate_user!
   
   # GET /questionnaires
   # GET /questionnaires.json
