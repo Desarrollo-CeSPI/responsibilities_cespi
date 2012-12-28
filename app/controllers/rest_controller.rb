@@ -1,5 +1,6 @@
 class RestController < ApplicationController
   before_filter :authenticate_user!
+  
   def updateQuestionWeight
 
     @questionnaire = Questionnaire.find(params[:questionnaire_id])
@@ -40,4 +41,12 @@ class RestController < ApplicationController
     end
   end
 
+  def getQuestions
+
+    @questions = Question.where("name like ?", "%#{params[:q]}%").order(:question_type)
+
+    respond_to do |format|
+      format.json { render json: @questions.to_json(:only => [:id, :name_and_type], :methods => [:name_and_type]) }
+    end
+  end
 end

@@ -7,10 +7,10 @@ class UserTest < ActiveSupport::TestCase
 
     assert user.invalid?
     
-    assert_equal 2, user.errors.size
-    # assert_present user.errors[:first_name]
-    # assert_present user.errors[:last_name]
-    # assert_present user.errors[:user_name]
+    assert_equal 5, user.errors.size
+    assert_present user.errors[:first_name]
+    assert_present user.errors[:last_name]
+    assert_present user.errors[:user_name]
     assert_present user.errors[:email]
     assert_present user.errors[:password]
     refute user.save

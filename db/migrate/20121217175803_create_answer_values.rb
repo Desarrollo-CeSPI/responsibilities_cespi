@@ -4,7 +4,8 @@ class CreateAnswerValues < ActiveRecord::Migration
       t.integer :value
       t.references :questionnaire
       t.references :answer
-
+      t.integer :from_id
+      t.integer :who_id
       t.timestamps
     end
     add_index :answer_values, :questionnaire_id

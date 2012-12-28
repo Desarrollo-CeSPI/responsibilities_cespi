@@ -5,16 +5,26 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
+
+  has_many :answer_values,   :foreign_key => :from,  :class_name => 'User'
+  has_many :answer_values,   :foreign_key => :who,   :class_name => 'User'
+
   # accessors
   attr_accessible :email, :password, :password_confirmation, :remember_me
   attr_accessible :first_name, :last_name, :user_name
 
   # validation
-<<<<<<< HEAD
-   validates :first_name, :last_name, :user_name, presence: :true, on: :update
+
+   validates :first_name, :last_name, :user_name, presence: :true
    validates :user_name, uniqueness: :true, on: :update
-=======
-  # validates :first_name, :last_name, :user_name, presence: :true
-  # validates :user_name, uniqueness: :true
->>>>>>> 364af39ae1116d14437dd5ea8fc5a4fb90926df7
+
+   def calculate_scoring(questionnaire_id)
+
+      value = 0
+      AnswerValue.find_all_by_questionnaire_id_and_who_id(questionnaire_id, self.id).each do |a|
+          value += (a.answer.percentage.to_f/100) * (a.questionnaire.question_weight(a.answer.question.id)/10).to_f
+      end
+
+      value
+   end
 end

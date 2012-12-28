@@ -34,6 +34,8 @@ es:
       new_html: <i class="icon-white icon-plus"></i> Nuevo
       edit_html: <i class="icon-edit"></i> Editar
       delete_html: <i class="icon-white icon-remove"></i> Eliminar
+      close_html: <i class="icon-white icon-eye-close"></i> Cerrar
+      scoring_html: <i class="icon-white icon-ok"></i> Puntuar
     questions:
       index:
         title: Preguntas

@@ -23,6 +23,17 @@
                         method: :delete,
                         data: { confirm: 'Are you sure?' },
                         class: 'btn btn-mini btn-danger' %>
+            <% if questionnaire.closed? %>
+              <%= link_to t('views.scaffold.scoring_html'),
+                          scoring_questionnaire_path(questionnaire.id),
+                          data: { confirm: 'Are you sure?' },
+                          class: 'btn btn-mini btn-success' %>
+            <% elsif questionnaire.dated? %>
+              <%= link_to t('views.scaffold.close_html'),
+                          close_questionnaire_path(questionnaire.id),
+                          data: { confirm: 'Are you sure?' },
+                          class: 'btn btn-mini btn-warning' %>
+            <% end %>
           </td>
         </tr>
       <% end %>

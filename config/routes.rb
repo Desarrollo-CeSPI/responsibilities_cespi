@@ -9,14 +9,23 @@ ResponsibilitiesCespi::Application.routes.draw do
   end
 
 
-  resources :questionnaires
-
+  resources :questionnaires do
+    member do
+      get 'close'
+      get 'scoring'
+    end
+  end
+  
+  resources :categories
 
   get "/rest_controller/:questionnaire_id/:question_id/:value" => "rest#updateQuestionWeight"
   get "/rest_controller/:answer_id/:value" => "rest#updateAnswerWeight"
   get "/rest_controller/allQuestions" => "rest#allQuestions"
+  get "/rest_controller/getQuestions" => "rest#getQuestions"
 
   get "/answer_questionnaire" => "questionnaires#answer"
+
+  put "/answer_questionnaire" => "questionnaires#answer_questionnaire"
 
   root to: 'questionnaires#answer'
 

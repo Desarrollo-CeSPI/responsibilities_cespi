@@ -40,7 +40,7 @@ function updateAnswerWightValueInModel(answer_id,value,slider_id){
 }
 
 $(function() {
-  $("#questionnaire_question_tokens").tokenInput("/rest_controller/allQuestions.json", {
+  $("#questionnaire_question_tokens").tokenInput("/rest_controller/getQuestions.json", {
     crossDomain: false,
     propertyToSearch: 'name_and_type',
     prePopulate: $("#questionnaire_question_tokens").data("pre"),

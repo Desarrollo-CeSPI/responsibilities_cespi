@@ -9,7 +9,7 @@
         <td>
           <% question.answers.each do |answer| %>
             <label class="radio">
-              <%= radio_button("answer","question_#{question.id}",answer.id, required: true) %>
+              <%= radio_button("answer","question_#{question.id}_#{user.user_name}",answer.id, required: true) %>
               <%= answer.name %>
             </label>        
           <% end %>
