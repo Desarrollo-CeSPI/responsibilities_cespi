@@ -1,37 +1,18 @@
 class QuestionsController < ApplicationController
-  before_filter :authenticate_user!
-  
+
   # GET /questions
-  # GET /questions.json
   def index
      @questions = Question.all
-    
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @questions }
-    end
   end
 
   # GET /questions/1
-  # GET /questions/1.json
   def show
     @question = Question.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @question }
-    end
   end
 
   # GET /questions/new
-  # GET /questions/new.json
   def new
     @question = Question.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @question }
-    end
   end
 
   # GET /questions/1/edit

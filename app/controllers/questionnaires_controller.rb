@@ -15,25 +15,13 @@ class QuestionnairesController < ApplicationController
   end
 
   # GET /questionnaires/1
-  # GET /questionnaires/1.json
   def show
     @questionnaire = Questionnaire.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @questionnaire }
-    end
   end
 
   # GET /questionnaires/new
-  # GET /questionnaires/new.json
   def new
     @questionnaire = Questionnaire.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @questionnaire }
-    end
   end
 
   # GET /questionnaires/1/edit
@@ -139,7 +127,6 @@ end
     end
   end
 
-
   def close
     @questionnaire = Questionnaire.find(params[:id])
     
@@ -148,6 +135,14 @@ end
     respond_to do |format|
       format.html { redirect_to questionnaires_url }
       format.json { head :no_content }
+    end
+  end
+
+  def answer
+    @questionnaire = Questionnaire.where("date_from <= ? AND date_to >= ?", Date.today , Date.today ).first
+    @users         = User.where("id != ?",current_user.id)
+    respond_to do |format|
+      format.html
     end
   end
 

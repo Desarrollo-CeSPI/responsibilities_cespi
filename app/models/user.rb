@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   # validation
 
    validates :first_name, :last_name, :user_name, presence: :true
-   validates :user_name, uniqueness: :true, on: :update
+   validates :user_name, uniqueness: :true
 
    def calculate_scoring(questionnaire_id)
 

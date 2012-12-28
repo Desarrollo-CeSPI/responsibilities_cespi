@@ -32,8 +32,8 @@ class Question < ActiveRecord::Base
 
   private
 
-    def check_has_answer
-      errors[:answer] << "Debe crear por lo menos una respuesta" unless answers.any?
-    end
+  def check_has_answer
+    errors.add :answer, :at_least_one unless answers.any?
+  end
 
 end
