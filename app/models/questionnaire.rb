@@ -61,7 +61,7 @@ class Questionnaire < ActiveRecord::Base
 
     array_questions_ids = Array.new
 
-    self.questions_propias.each do |q|
+    self.questions_administrador.each do |q|
         array_questions_ids.push(q.id)
     end
 

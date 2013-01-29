@@ -5,14 +5,26 @@
 		[
 			[
 				"ques",
-				"questionnaire"
-			],
-			[
-				"que",
-				"questionnaire"
+				"question_id"
 			],
 			[
 				"qu",
+				"questionnaire_id"
+			],
+			[
+				"question",
+				"questions_administrador"
+			],
+			[
+				"question_",
+				"question_type"
+			],
+			[
+				"questions",
+				"questionnaire_questions"
+			],
+			[
+				"que",
 				"questionnaire"
 			],
 			[
@@ -26,10 +38,6 @@
 			[
 				"max",
 				"max_value"
-			],
-			[
-				"question",
-				"questionnaire"
 			],
 			[
 				"user",
@@ -311,38 +319,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/views/devise/registrations/new.html.erb",
-			"settings":
-			{
-				"buffer_size": 697,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/user.rb",
-			"settings":
-			{
-				"buffer_size": 730,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "test/unit/user_test.rb",
-			"settings":
-			{
-				"buffer_size": 942,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/category.rb",
-			"settings":
-			{
-				"buffer_size": 183,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -368,45 +344,49 @@
 	},
 	"file_history":
 	[
+		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/user.rb",
+		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/answer_value.rb",
+		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/questionnaire.rb",
+		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/user_questionnaire.rb",
+		"/Users/Gaspar/Sites/responsibilities_cespi/config/locales/es.yml",
+		"/Users/Gaspar/Sites/responsibilities_cespi/app/controllers/questionnaires_controller.rb",
+		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/devise/registrations/new.html.erb",
+		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/users/show.html.erb",
+		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/answer.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/layouts/_header.html.erb",
+		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/category.rb",
+		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/questionnaires/show.html.erb",
+		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/question.rb",
+		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/questionnaire_question.rb",
+		"/Users/Gaspar/Sites/responsibilities_cespi/test/unit/user_test.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/categories/index.html.erb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/categories/new.html.erb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/config/routes.rb",
-		"/Users/Gaspar/Sites/responsibilities_cespi/app/controllers/questionnaires_controller.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/questionnaires/index.html.erb",
-		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/user_questionnaire.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/test/unit/category_test.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/test/functional/categories_controller_test.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/test/fixtures/questionnaires.yml",
-		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/questionnaire.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/test/unit/questionnaire_test.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/test/functional/answers_controller_test.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/controllers/answers_controller.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/config/locales/en.yml",
-		"/Users/Gaspar/Sites/responsibilities_cespi/config/locales/es.yml",
 		"/Users/Gaspar/Sites/responsibilities_cespi/db/migrate/20121227174325_add_closed_to_questionnaire.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/controllers/questions_controller.rb",
-		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/category.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/questionnaires/_answered.html.erb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/questionnaires/answer.html.erb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/questionnaires/_questions_list_for_answer_user.html.erb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/questionnaires/_questions_list_for_answer.html.erb",
-		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/answer_value.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/db/migrate/20121226184320_create_user_questionnaires.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/db/migrate/20121219162352_add_devise_to_users.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/db/migrate/20121217175803_create_answer_values.rb",
-		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/user.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/layouts/application.html.erb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/questionnaires/_question_answers.html.erb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/questionnaires/_questionnaire_questions.html.erb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/layouts/_page_header.html.erb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/layouts/_section_header.html.erb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/controllers/rest_controller.rb",
-		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/questionnaire_question.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/assets/javascripts/application.js",
-		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/question.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/questions/_form.html.erb",
-		"/Users/Gaspar/Sites/responsibilities_cespi/app/models/answer.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/test/fixtures/questionnaire_questions.yml",
 		"/Users/Gaspar/Sites/responsibilities_cespi/test/functional/rest_controller_test.rb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/test/fixtures/answers.yml",
@@ -415,7 +395,6 @@
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/questions/index.html.erb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/devise/sessions/new.html.erb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/questions/show.html.erb",
-		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/questionnaires/show.html.erb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/assets/javascripts/jquery.tokeninput.js",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/views/answers/index.html.erb",
 		"/Users/Gaspar/Sites/responsibilities_cespi/app/assets/stylesheets/application.css",
@@ -492,10 +471,7 @@
 		"/Users/Gaspar/Sites/book_demos/app/controllers/say_controller.rb",
 		"/Users/Gaspar/Sites/book_demos/app/views/say/hello.html.erb",
 		"/Users/Gaspar/Sites/book_demos/app/views/say/goodbye.html.erb",
-		"/Users/Gaspar/Downloads/DATOS/ISIS/arrancar.bat",
-		"/Users/Gaspar/Desktop/Grupos/grupo22/reentrega/controlador/controladorVerCVBusqueda.php",
-		"/Users/Gaspar/Desktop/Grupos/grupo22/reentrega/modelo/modeloVerMiCurriculum.php",
-		"/Users/Gaspar/Desktop/Grupos/grupo22/reentrega/controlador/controlBuscador.php"
+		"/Users/Gaspar/Downloads/DATOS/ISIS/arrancar.bat"
 	],
 	"find":
 	{
@@ -669,117 +645,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/views/devise/registrations/new.html.erb",
-					"settings":
-					{
-						"buffer_size": 697,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								411,
-								411
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/models/user.rb",
-					"settings":
-					{
-						"buffer_size": 730,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								730,
-								730
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "test/unit/user_test.rb",
-					"settings":
-					{
-						"buffer_size": 942,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								187,
-								187
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/models/category.rb",
-					"settings":
-					{
-						"buffer_size": 183,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								183,
-								183
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -825,23 +692,51 @@
 		"selected_items":
 		[
 			[
-				"user_tes",
-				"test/unit/user_test.rb"
+				"questionnaire_con",
+				"app/controllers/questionnaires_controller.rb"
 			],
 			[
-				"user",
+				"answer_value.rb",
+				"app/models/answer_value.rb"
+			],
+			[
+				"user.",
 				"app/models/user.rb"
+			],
+			[
+				"config/locales/es.yml",
+				"config/locales/es.yml"
+			],
+			[
+				"answer",
+				"app/models/answer.rb"
 			],
 			[
 				"header",
 				"app/views/layouts/_header.html.erb"
 			],
 			[
-				"ques",
-				"test/fixtures/questionnaires.yml"
+				"user",
+				"app/models/user.rb"
+			],
+			[
+				"question",
+				"app/models/question.rb"
+			],
+			[
+				"questionnaireqi",
+				"app/models/questionnaire_question.rb"
 			],
 			[
 				"questionna",
+				"app/models/questionnaire.rb"
+			],
+			[
+				"user_tes",
+				"test/unit/user_test.rb"
+			],
+			[
+				"ques",
 				"test/fixtures/questionnaires.yml"
 			],
 			[
@@ -865,16 +760,8 @@
 				"app/models/user_questionnaire.rb"
 			],
 			[
-				"answer",
-				"app/controllers/answers_controller.rb"
-			],
-			[
 				"rou",
 				"config/routes.rb"
-			],
-			[
-				"questionnaire_con",
-				"app/controllers/questionnaires_controller.rb"
 			],
 			[
 				"route",
@@ -983,10 +870,6 @@
 			[
 				"token",
 				"app/assets/javascripts/jquery.tokeninput.js"
-			],
-			[
-				"question",
-				"app/models/question.rb"
 			],
 			[
 				"ans",
@@ -1319,22 +1202,6 @@
 			[
 				"controladoraltaus",
 				"controlador/controladorAltaUsuario.php"
-			],
-			[
-				"controladorcrearusuario",
-				"controlador/controladorCrearUsuario.php"
-			],
-			[
-				"front",
-				"controlador/frontEnd.php"
-			],
-			[
-				"controlbu",
-				"controlador/controlBuscador.php"
-			],
-			[
-				"modelovermicurriculum",
-				"modelo/modeloVerMiCurriculum.php"
 			]
 		],
 		"width": 0.0

@@ -18,6 +18,8 @@ class User < ActiveRecord::Base
    validates :first_name, :last_name, :user_name, presence: :true
    validates :user_name, uniqueness: :true
 
+
+#De estas, tenemos que quedaron solamente con las que son de tipo :Administrador
    def calculate_scoring(questionnaire_id)
 
       value = 0
