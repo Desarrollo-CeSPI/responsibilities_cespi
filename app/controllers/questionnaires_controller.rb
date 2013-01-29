@@ -79,6 +79,12 @@ class QuestionnairesController < ApplicationController
         format.html { render "_answered" }
       end
     end
+
+  rescue => e
+      respond_to do |format| 
+        format.html { render "_no_questionnaire" }
+      end    
+
   end
 
 def answer_questionnaire
