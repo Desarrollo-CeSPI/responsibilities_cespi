@@ -87,6 +87,29 @@ class QuestionnairesController < ApplicationController
 
   end
 
+  def answer_admin
+
+    @questionnaire = Questionnaire.where("date_from <= ? AND date_to >= ?", Date.today , Date.today ).first
+
+    user_questionnaire = UserQuestionnaire.find_by_questionnaire_id_and_user_id(@questionnaire.id,current_user.id)
+
+    if (user_questionnaire.nil?)
+        @users         = User.where("id != ?",current_user.id)
+        respond_to do |format|
+          format.html 
+        end
+    else
+      respond_to do |format| 
+        format.html { render "_answered" }
+      end
+    end
+
+  rescue => e
+      respond_to do |format| 
+        format.html { render "_no_questionnaire" }
+      end    
+
+  end
 def answer_questionnaire
 
   value_answers = params[:answer]
