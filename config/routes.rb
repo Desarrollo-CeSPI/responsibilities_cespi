@@ -24,8 +24,10 @@ ResponsibilitiesCespi::Application.routes.draw do
   get "/rest_controller/getQuestions" => "rest#getQuestions"
 
   get "/answer_questionnaire" => "questionnaires#answer"
+  get "/answer_questionnaire_admin" => "questionnaires#answer_admin"
 
   put "/answer_questionnaire" => "questionnaires#answer_questionnaire"
+  put "/answer_questionnaire_admin" => "questionnaires#answer_questionnaire"
 
   root to: 'questionnaires#answer'
 
