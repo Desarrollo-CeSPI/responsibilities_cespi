@@ -118,8 +118,8 @@ def answer_questionnaire
   user_questionnaire.save
 
   redirect_to answer_questionnaire_url
-  rescue ActiveRecord::RecordNotUnique => e
-    redirect_to answer_questionnaire_url
+  # rescue ActiveRecord::RecordNotUnique => e
+  #   redirect_to answer_questionnaire_url
 end
 
   # DELETE /questionnaires/1
