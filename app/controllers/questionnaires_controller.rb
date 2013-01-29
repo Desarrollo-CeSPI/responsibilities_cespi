@@ -79,37 +79,8 @@ class QuestionnairesController < ApplicationController
         format.html { render "_answered" }
       end
     end
-
-  rescue => e
-      respond_to do |format| 
-        format.html { render "_no_questionnaire" }
-      end    
-
   end
 
-  def answer_admin
-
-    @questionnaire = Questionnaire.where("date_from <= ? AND date_to >= ?", Date.today , Date.today ).first
-
-    user_questionnaire = UserQuestionnaire.find_by_questionnaire_id_and_user_id(@questionnaire.id,current_user.id)
-
-    if (user_questionnaire.nil?)
-        @users         = User.where("id != ?",current_user.id)
-        respond_to do |format|
-          format.html 
-        end
-    else
-      respond_to do |format| 
-        format.html { render "_answered" }
-      end
-    end
-
-  rescue => e
-      respond_to do |format| 
-        format.html { render "_no_questionnaire" }
-      end    
-
-  end
 def answer_questionnaire
 
   value_answers = params[:answer]
@@ -140,9 +111,8 @@ def answer_questionnaire
 
   user_questionnaire.save
 
-  redirect_to answer_questionnaire_url
-  # rescue ActiveRecord::RecordNotUnique => e
-  #   redirect_to answer_questionnaire_url
+  rescue ActiveRecord::RecordNotUnique => e
+    redirect_to questionnaires_url
 end
 
   # DELETE /questionnaires/1
@@ -160,11 +130,19 @@ end
   def close
     @questionnaire = Questionnaire.find(params[:id])
     
-    @questionnaire.close #unless (@questionnaire.date_to < Date.today)
+    @questionnaire.close unless (@questionnaire.date_to < Date.today)
 
     respond_to do |format|
       format.html { redirect_to questionnaires_url }
       format.json { head :no_content }
+    end
+  end
+
+  def answer
+    @questionnaire = Questionnaire.where("date_from <= ? AND date_to >= ?", Date.today , Date.today ).first
+    @users         = User.where("id != ?",current_user.id)
+    respond_to do |format|
+      format.html
     end
   end
 
@@ -177,4 +155,5 @@ end
      @user_questionnaires = UserQuestionnaire.find_all_by_questionnaire_id(@questionnaire.id)
 
   end
+
 end
