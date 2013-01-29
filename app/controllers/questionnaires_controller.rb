@@ -111,8 +111,9 @@ def answer_questionnaire
 
   user_questionnaire.save
 
+  redirect_to answer_questionnaire_url
   rescue ActiveRecord::RecordNotUnique => e
-    redirect_to questionnaires_url
+    redirect_to answer_questionnaire_url
 end
 
   # DELETE /questionnaires/1
@@ -135,14 +136,6 @@ end
     respond_to do |format|
       format.html { redirect_to questionnaires_url }
       format.json { head :no_content }
-    end
-  end
-
-  def answer
-    @questionnaire = Questionnaire.where("date_from <= ? AND date_to >= ?", Date.today , Date.today ).first
-    @users         = User.where("id != ?",current_user.id)
-    respond_to do |format|
-      format.html
     end
   end
 
