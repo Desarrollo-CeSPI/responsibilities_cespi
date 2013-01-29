@@ -32,3 +32,4 @@ class User < ActiveRecord::Base
       (value * 100 / questionnaire.total_score).round
    end
 end
+
