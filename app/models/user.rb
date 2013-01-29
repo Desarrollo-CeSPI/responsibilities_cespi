@@ -24,9 +24,11 @@ class User < ActiveRecord::Base
 
       value = 0
       AnswerValue.find_all_by_questionnaire_id_and_who_id(questionnaire_id, self.id).each do |a|
-          value += (a.answer.percentage.to_f/100) * (a.questionnaire.question_weight(a.answer.question.id)/10).to_f
+          value += (a.answer.percentage.to_f/100) * (a.questionnaire.question_weight(a.answer.question.id)).to_f
       end
 
-      value
+      questionnaire = Questionnaire.find_by_id(questionnaire_id)
+
+      (value * 100 / questionnaire.total_score).round
    end
 end

@@ -15,6 +15,9 @@ class UserQuestionnaire < ActiveRecord::Base
   def get_category
     category = Category.where("min_value <= ? AND max_value >= ?",scoring,scoring).first
 
-    category.name
+    if (!category.nil?)
+      category.name
+    end
+
   end
 end
