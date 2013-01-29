@@ -23,6 +23,7 @@ class QuestionsController < ApplicationController
   # POST /questions
   def create
     @question = Question.new(params[:question])
+
     if @question.save
       redirect_to @question, notice: t('views.questions.flashes.created')
     else
