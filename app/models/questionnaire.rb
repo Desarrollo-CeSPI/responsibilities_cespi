@@ -57,11 +57,11 @@ class Questionnaire < ActiveRecord::Base
     Date.today > date_to
   end
 
-  def total_score_admin
+  def total_score
 
     array_questions_ids = Array.new
 
-    self.questions_administrador.each do |q|
+    self.questions.each do |q|
         array_questions_ids.push(q.id)
     end
 

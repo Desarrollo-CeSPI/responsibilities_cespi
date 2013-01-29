@@ -1,0 +1,38 @@
+<% if @questionnaire %>
+
+  <% if @questionnaire.questions.any? %>
+       <%= form_for @questionnaire, html: { class: "form-horizontal" }, url: "/answer_questionnaire" do |f| %> 
+        <% if @questionnaire.questions_administrador.any? %>
+            <% @users.each do |user| %>
+
+                <%= render partial: 'layouts/page_header', locals: { 
+                                                                    title: "#{user.first_name} #{user.last_name}",
+                                                                    sub_title: t('views.questionnaire.questions.adminsitrador') 
+                                                                    } 
+                %>
+            
+                <%= render partial: 'questions_list_for_answer_user', locals: { 
+                                                                                questions: @questionnaire.questions_administrador,  
+                                                                                user: user 
+                                                                              } 
+                %>
+            <% end %>
+        <% end %>
+
+        <input type="hidden" name="questionnaire" value="<%= @questionnaire.id %>" />
+        <%= csrf_meta_tag %>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary btn-large"><%= t 'Contestar' %></button>
+        </div>
+
+      <% end %>
+  <% else %>
+      <h2 style="margin-top: 50px;">
+        <%= t('views.questionnaires.questions.empty') %>
+      </h2>
+  <% end %>
+<% else %>
+  <h2 style="margin-top: 50px;">
+    <%= t('views.questionnaires.empty') %>
+  </h2>
+<% end %>
