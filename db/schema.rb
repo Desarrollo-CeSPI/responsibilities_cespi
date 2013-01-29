@@ -11,14 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121227182346) do
+ActiveRecord::Schema.define(:version => 20121227212245) do
 
   create_table "answer_values", :force => true do |t|
     t.integer  "value"
     t.integer  "questionnaire_id"
     t.integer  "answer_id"
-    t.integer  "from_id"
-    t.integer  "who_id"
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
@@ -97,6 +95,7 @@ ActiveRecord::Schema.define(:version => 20121227182346) do
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
     t.string   "last_sign_in_ip"
+    t.boolean  "es_putito"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
