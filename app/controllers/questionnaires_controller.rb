@@ -168,4 +168,13 @@ end
     end
   end
 
+  def scoring
+    @questionnaire = Questionnaire.find(params[:id])
+    questionnaire_score = @questionnaire.total_score
+
+     UserQuestionnaire.calculate_scoring(@questionnaire.id)
+
+     @user_questionnaires = UserQuestionnaire.find_all_by_questionnaire_id(@questionnaire.id)
+
+  end
 end

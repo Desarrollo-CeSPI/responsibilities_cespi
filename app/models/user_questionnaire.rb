@@ -5,10 +5,16 @@ class UserQuestionnaire < ActiveRecord::Base
   attr_accessible :scoring
 
 
-  def calculate_scoring(questionnaire_id)
+  def self.calculate_scoring(questionnaire_id)
       UserQuestionnaire.find_all_by_questionnaire_id(questionnaire_id).each do |uq|
           uq.scoring= uq.user.calculate_scoring(questionnaire_id).round
           uq.save
       end
+  end
+
+  def get_category
+    category = Category.where("min_value <= ? AND max_value >= ?",scoring,scoring).first
+
+    category.name
   end
 end

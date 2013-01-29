@@ -1,0 +1,16 @@
+<table class="table table-stripped">
+  <thead>
+    <th> <%= t'Usuario' %> </th>
+    <th> <%= t'Puntaje' %> </th>
+    <th> <%= t'Categoría' %> </th>
+  </thead>
+  <tbody>
+    <% @user_questionnaires.each do |uq| %>
+      <tr>
+        <td><%= uq.user.first_name %> <%= uq.user.last_name %></td>
+        <td><%= uq.scoring %></td>
+        <td><%= uq.get_category %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
