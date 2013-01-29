@@ -137,7 +137,7 @@ end
   def close
     @questionnaire = Questionnaire.find(params[:id])
     
-    @questionnaire.close unless (@questionnaire.date_to < Date.today)
+    @questionnaire.close #unless (@questionnaire.date_to < Date.today)
 
     respond_to do |format|
       format.html { redirect_to questionnaires_url }
