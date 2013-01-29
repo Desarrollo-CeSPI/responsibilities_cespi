@@ -2,7 +2,7 @@ require 'test_helper'
 
 class AnswerTest < ActiveSupport::TestCase
   
-  test "present attributes" do
+  test "required attributes should be present" do
     answer = Answer.new
 
     assert answer.invalid?
@@ -22,7 +22,7 @@ class AnswerTest < ActiveSupport::TestCase
     assert_present answer.errors[:percentage]
   end
 
-  test "percentage should not be grater than 100" do 
+  test "percentage should not be greater than 100" do 
     answer            = Answer.new
     answer.name       = answers(:answer_one).name
     answer.question   = answers(:answer_one).question
@@ -37,7 +37,7 @@ class AnswerTest < ActiveSupport::TestCase
     answer            = Answer.new
     answer.name       = answers(:answer_one).name
     answer.question   = answers(:answer_one).question
-    answer.percentage = "pepe"
+    answer.percentage = "not an integer"
 
     answer.invalid?
     assert_equal 1, answer.errors.size
