@@ -24,24 +24,22 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
 
-    respond_to do |format|
-      if @user.save
-        redirect_to @user, notice: t('views.users.flashes.created')
-      else
-        render action: "new"
-      end
+    if @user.save
+      redirect_to @user, notice: t('views.users.flashes.created')
+    else
+      render action: "new"
+    end
   end
 
-  # PUT /users/1
+  # UPDATE /users/1
   def update
     @user = User.find(params[:id])
 
-    respond_to do |format|
-      if @user.update_attributes(params[:user])
-        redirect_to @user, notice: t('views.users.flashes.updated')
-      else
-        render action: "edit"
-      end
+    if @user.update_attributes(params[:user])
+      redirect_to users_path, notice: t("views.users.flashes.updated")
+    else
+      render action: "edit"
+    end
   end
 
   # DELETE /users/1
