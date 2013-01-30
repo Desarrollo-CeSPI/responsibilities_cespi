@@ -3,6 +3,7 @@
 /* mixins, variables, etc. */
 $lightGray: #999;
 
+
 /* universal */
 html {
   overflow-y: scroll;
@@ -50,6 +51,7 @@ p {
 }
 
 /* header */
+
 #logo {
   float: left;
   margin-right: 10px;
@@ -73,7 +75,9 @@ footer {
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
-  color: $lightGray;
+  color: #555;
+  background-color: #E5CE8E;
+
 
   a {
     color: #555;
@@ -98,4 +102,50 @@ footer {
 
 
 
+.navbar-inner{background: #a7cfdf; /* Old browsers */
+background: -moz-linear-gradient(top, #a7cfdf 0%, #23538a 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7cfdf), color-stop(100%,#23538a)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #a7cfdf 0%,#23538a 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(top, #a7cfdf 0%,#23538a 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(top, #a7cfdf 0%,#23538a 100%); /* IE10+ */
+background: linear-gradient(to bottom, #a7cfdf 0%,#23538a 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', endColorstr='#23538a',GradientType=0 ); /* IE6-9 */}
 
+.navbar .nav > li > a {
+    color: #FFF;
+}
+
+.form-actions {
+    background-color: #E6F2F7;
+    border-top: 1px solid #DDDDDD;
+    margin-bottom: 18px;
+    margin-top: 18px;
+    padding: 17px 20px 18px;
+}
+
+.btn-primary {
+ 
+  color: #FFFFFF;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  background-color: #D4940B;
+  *background-color: #D4940B;
+  background-image: -moz-linear-gradient(top, #F2D561, #D4940B);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#F2D561), to(#D4940B));
+  background-image: -webkit-linear-gradient(top, #F2D561, #D4940B);
+  background-image: -o-linear-gradient(top, #F2D561, #D4940B);
+  background-image: linear-gradient(to bottom, #F2D561, #D4940B);
+  background-repeat: repeat-x;
+  border-color: #D4940B;
+  border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F2D561', endColorstr='#D4940B', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  color: #FFFFFF;
+  background-color: #D4940B;
+  *background-color: #003bb3;
+}

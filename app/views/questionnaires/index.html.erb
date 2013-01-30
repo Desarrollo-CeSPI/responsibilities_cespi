@@ -42,5 +42,7 @@
 <% else %>
   <p><%=t 'views.questionnaires.questions.empty' %></p>
 <% end %>
-<%= link_to t('views.scaffold.new_html'), new_questionnaire_path,
+<div class="form-actions">
+    <%= link_to t('views.scaffold.new_html'), new_questionnaire_path,
             class: 'btn btn-primary' %>
+</div>
