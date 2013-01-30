@@ -5,8 +5,9 @@
     <%= f.input :date_from, as: :ui_date_picker %>
     <%= f.input :date_to, as: :ui_date_picker %>
 
-    <%= f.label :question_tokens %>
-    <%= f.text_field :question_tokens, "data-pre" => @questionnaire.questions.all.to_json(:only => [:id, :name_and_type], :methods => [:name_and_type])  %>
+    <%= f.association(:questions) %>
+
+
 
   </div>
 
