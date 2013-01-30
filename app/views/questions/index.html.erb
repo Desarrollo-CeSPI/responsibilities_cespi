@@ -1,4 +1,5 @@
 <%= render partial: 'layouts/page_header', locals: { title: t('views.questions.index.title') } %>
+
 <% if @questions.any? %>
   <table class="table table-striped">
     <thead>
@@ -17,12 +18,12 @@
           <td><%=l question.created_at %></td>
           <td>
             <%= link_to t('views.scaffold.edit_html'),
-                        edit_question_path(question), :class => 'btn btn-mini' %>
+                        edit_question_path(question), class: 'btn btn-mini' %>
             <%= link_to t('views.scaffold.delete_html'),
                         question_path(question),
-                        :method => :delete,
-                        :data => { confirm:  'Are you sure?' },
-                        :class => 'btn btn-mini btn-danger' %>
+                        method: :delete,
+                        data: { confirm:  'Are you sure?' },
+                        class: 'btn btn-mini btn-danger' %>
           </td>
         </tr>
       <% end %>
@@ -33,4 +34,4 @@
 <% end %>
 
 <%= link_to t('views.scaffold.new_html'), new_question_path,
-            :class => 'btn btn-primary' %>
+            class: 'btn btn-primary' %>

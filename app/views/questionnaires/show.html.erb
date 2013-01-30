@@ -1,28 +1,28 @@
-<%- model_class = Questionnaire -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human %></h1>
-</div>
+<%= render partial: 'layouts/page_header', locals: { title: t('views.questionnaires.show.title') } %>
 
-<dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
-  <dd><%= @questionnaire.name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:date_from) %>:</strong></dt>
-  <dd><%= @questionnaire.date_from %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:date_to) %>:</strong></dt>
-  <dd><%= @questionnaire.date_to %></dd>
-</dl>
+<section id="general-information">
+  <p id="notice"><%= notice %></p>
+  <p>
+    <strong><%=t 'activerecord.attributes.questionnaire.name'%></strong>
+      <%= @questionnaire.name %>
+  </p>
+  <p>
+    <strong><%=t 'activerecord.attributes.questionnaire.date_from'%></strong>
+    <%= @questionnaire.date_from %>
+  </p>
+
+  <p>
+    <strong><%=t 'activerecord.attributes.questionnaire.date_to'%></strong>
+    <%= @questionnaire.date_to %>
+  </p>
+</section>
 
 <%= render partial: 'layouts/page_header', locals: { title: t('views.questionnaires.questions.title') } %>
 <%= render partial: 'questionnaire_questions' %>
 
 <div class="form-actions">
-  <%= link_to t('.back', :default => t("helpers.links.back")),
-              questionnaires_path, :class => 'btn'  %>
-  <%= link_to t('.edit', :default => t("helpers.links.edit")),
-              edit_questionnaire_path(@questionnaire), :class => 'btn' %>
-  <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
-              questionnaire_path(@questionnaire),
-              :method => 'delete',
-              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
-              :class => 'btn btn-danger' %>
+  <%= link_to t('views.scaffold.back_html'), questionnaires_path, class: 'btn secondary' %>
+  <%= link_to t('views.scaffold.edit_html'), edit_questionnaire_path(@questionnaire), class: 'btn btn-mini' %>
+  <%= link_to t('views.scaffold.delete_html'),@questionnaire, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini' %>
 </div>
+

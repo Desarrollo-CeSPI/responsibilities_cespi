@@ -1,4 +1,4 @@
-<%= simple_form_for @user, :html => { :class => 'form-horizontal' } do |f| %>
+<%= simple_form_for @user, html: { class: 'form-horizontal' } do |f| %>
   <%= f.input :user_name %>
   <%= f.input :first_name %>
   <%= f.input :last_name %>
@@ -6,7 +6,7 @@
   <%= f.input :password %>
   <%= f.input :password_confirmation %>
   <div class="form-actions">
-    <%= f.button :submit, :class => 'btn-primary' %>
+    <%= f.button :submit, class: 'btn-primary' %>
     <%= link_to t('views.scaffold.back_html'), users_path, class: 'btn secondary' %>
   </div>
 <% end %>
