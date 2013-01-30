@@ -36,7 +36,7 @@
 
           <div id="collapseAnonimas_<%= user.user_name %>" class="accordion-body collapse">
               <div class="accordion-inner">    
-                 <%= render partial: 'questions_list_for_answer_user', locals: { 
+                 <%= render partial: 'questions_list_for_answer', locals: { 
                                                                           questions: @questionnaire.questions_anonimas,  
                                                                           user: user 
                                                                         } 
