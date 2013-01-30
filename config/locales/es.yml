@@ -23,7 +23,7 @@ es:
         question:
           attributes:
             answer:
-              at_least_one: Debe crear por lo menos una respuesta
+              at_least_one: Debe crear por lo menos una respuesta.
 
   # VIEWS
   views:
@@ -32,17 +32,24 @@ es:
         title: Cuestionarios
       questions:
         anonimas: Preguntas sobre los demás
-        empty: Este cuestionario no tiene ninguna pregunta
+        empty: Este cuestionario no tiene ninguna pregunta.
         propias: Preguntas acerca tuyo
         title: Preguntas
-      empty: No hay ningún cuestionario activo
+      empty: No hay ningún cuestionario activo.
 
     scaffold:
+      are_you_sure: ¿Estás seguro?
+      back: Volver
+      back_html: <i class="icon-arrow-left"></i> Volver
       delete_html: <i class="icon-white icon-remove"></i> Eliminar
       close_html: <i class="icon-white icon-eye-close"></i> Cerrar
       scoring_html: <i class="icon-white icon-ok"></i> Puntuar
       edit_html: <i class="icon-edit"></i> Editar
       new_html: <i class="icon-white icon-plus"></i> Nuevo
+    categories:
+      empty: No hay categorías
+      index:
+        title: categorías
     questions:
       empty: No hay preguntas
       index:
