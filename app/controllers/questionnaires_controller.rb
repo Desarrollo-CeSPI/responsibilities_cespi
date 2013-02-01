@@ -130,19 +130,11 @@ end
   def close
     @questionnaire = Questionnaire.find(params[:id])
     
-    @questionnaire.close unless (@questionnaire.date_to < Date.today)
+    @questionnaire.close
 
     respond_to do |format|
       format.html { redirect_to questionnaires_url }
       format.json { head :no_content }
-    end
-  end
-
-  def answer
-    @questionnaire = Questionnaire.where("date_from <= ? AND date_to >= ?", Date.today , Date.today ).first
-    @users         = User.where("id != ?",current_user.id)
-    respond_to do |format|
-      format.html
     end
   end
 
