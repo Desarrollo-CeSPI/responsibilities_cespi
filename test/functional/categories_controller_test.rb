@@ -21,7 +21,7 @@ class CategoriesControllerTest < ActionController::TestCase
   test "should create category" do
     sign_in users(:one)
     assert_difference('Category.count') do
-      post :create, category: { max_value: @category.max_value, min_value: @category.min_value, name: @category.name }
+      post :create, category: { max_value: @category.max_value, min_value: @category.min_value, name: 'Semi junior' }
     end
 
     assert_redirected_to category_path(assigns(:category))
