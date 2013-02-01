@@ -5,8 +5,8 @@
     <%= f.input :name %>
     <%= f.input :question_type, as: :select, collection: [:Administrador, :Propia, :Anonima] %>
     <hr>
-    <% if @question.errors[:answer].any? %>
-      <p class="alert alert-error"><%= @question.errors[:answer].join %></p>
+    <% if @question.errors[:base].any? %>
+      <div class="alert alert-error"><%= @question.errors[:base].join %></div>
     <% end %>
   
     <%= f.fields_for :answers do |builder| %>

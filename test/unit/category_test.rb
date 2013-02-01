@@ -22,10 +22,28 @@ class CategoryTest < ActiveSupport::TestCase
     field_not_nil_test(:name=, category)
   end
 
+  test "should not create category when min_value is nil" do
+    category = get_new_category
+    field_not_nil_test(:min_value=, category)
+  end
+
+  test "should not create category when max_value is nil" do
+    category = get_new_category
+    field_not_nil_test(:max_value=, category)
+  end
+
+  test "should not create more than one category with same name" do
+    category = get_new_category
+    category.name = 'Senior'
+    refute category.save
+    assert_equal 1, category.errors.size
+    assert_present category.errors[:name]
+  end
+
   private
   def get_new_category
     category = Category.new
-    category.name = 'Un nombre de categoria'
+    category.name = 'Junior'
     category.min_value = 20
     category.max_value = 40
 

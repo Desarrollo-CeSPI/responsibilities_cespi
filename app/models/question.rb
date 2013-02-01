@@ -33,7 +33,7 @@ class Question < ActiveRecord::Base
   private
 
   def check_has_answer
-    errors.add :answer, :at_least_one unless answers.any?
+    errors.add :base, :at_least_one unless answers.any?
   end
 
 end

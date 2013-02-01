@@ -22,7 +22,7 @@ es:
       models:
         question:
           attributes:
-            answer:
+            base:
               at_least_one: Debe crear por lo menos una respuesta.
 
   # VIEWS

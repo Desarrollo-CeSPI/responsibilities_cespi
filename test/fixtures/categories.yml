@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  name: MyString
+  name: Senior
   min_value: 1
-  max_value: 1
+  max_value: 2
 
 two:
-  name: MyString
+  name: Semi senior
   min_value: 1
   max_value: 1
