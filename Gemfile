@@ -2,12 +2,15 @@ source 'https://rubygems.org'
 
 gem 'rails'
 
+#alternativa a cancan
+gem 'pundit', "~> 0.2.0"
+
 gem 'bootstrap-sass', '2.0.0'
 
 gem 'devise'
 
-# TO-DO: install this gems
 gem "twitter-bootstrap-rails" 
+
 gem 'bootstrap-datepicker-rails'
 
 # Bundle edge Rails instead:

@@ -1,10 +1,13 @@
 class QuestionnairesController < ApplicationController
   before_filter :authenticate_user!
+
   # GET /questionnaires
   # GET /questionnaires.json
-
   def index
     @questionnaires = Questionnaire.all
+
+    # FIXME: busca la clase ArrayPolice, que esta creada. Pero es muy feo !!
+    authorize @questionnaires
 
     @questions = Question.where("name like ?", "%#{params[:q]}%")
 
@@ -17,24 +20,27 @@ class QuestionnairesController < ApplicationController
   # GET /questionnaires/1
   def show
     @questionnaire = Questionnaire.find(params[:id])
+    authorize @questionnaire
   end
 
   # GET /questionnaires/new
   def new
     @questionnaire = Questionnaire.new
+    authorize @questionnaire
   end
 
   # GET /questionnaires/1/edit
   def edit
     @questionnaire = Questionnaire.find(params[:id])
+    authorize @questionnaire
   end
 
   # POST /questionnaires
   # POST /questionnaires.json
   def create
     @questionnaire = Questionnaire.new(params[:questionnaire])
-    
-    # raise params[:questionnaire].to_yaml
+
+    authorize @questionnaire
 
     respond_to do |format|
       if @questionnaire.save
@@ -52,6 +58,8 @@ class QuestionnairesController < ApplicationController
   def update
     @questionnaire = Questionnaire.find(params[:id])
 
+    authorize @questionnaire
+
     respond_to do |format|
       if @questionnaire.update_attributes(params[:questionnaire])
         format.html { redirect_to @questionnaire, notice: 'Questionnaire was successfully updated.' }
@@ -63,23 +71,25 @@ class QuestionnairesController < ApplicationController
     end
   end
 
-  def answer
+  # FIXME: se rompe en el root_path, tira :
+  # Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id
+  # def answer
 
-    @questionnaire = Questionnaire.where("date_from <= ? AND date_to >= ?", Date.today , Date.today ).first
+  #   @questionnaire = Questionnaire.where("date_from <= ? AND date_to >= ?", Date.today , Date.today ).first
 
-    user_questionnaire = UserQuestionnaire.find_by_questionnaire_id_and_user_id(@questionnaire.id,current_user.id)
+  #   user_questionnaire = UserQuestionnaire.find_by_questionnaire_id_and_user_id(@questionnaire.id,current_user.id)
 
-    if (user_questionnaire.nil?)
-        @users         = User.where("id != ?",current_user.id)
-        respond_to do |format|
-          format.html
-        end
-    else
-      respond_to do |format| 
-        format.html { render "_answered" }
-      end
-    end
-  end
+  #   if (user_questionnaire.nil?)
+  #       @users         = User.where("id != ?",current_user.id)
+  #       respond_to do |format|
+  #         format.html
+  #       end
+  #   else
+  #     respond_to do |format| 
+  #       format.html { render "_answered" }
+  #     end
+  #   end
+  # end
 
   def answer_admin
 
@@ -100,44 +110,45 @@ class QuestionnairesController < ApplicationController
   end
 
 
-def answer_questionnaire
+  def answer_questionnaire
 
-  value_answers = params[:answer]
+    value_answers = params[:answer]
 
-  value_answers.keys.each do |value_answer_key|
-    new_key = value_answer_key.split('_')
+    value_answers.keys.each do |value_answer_key|
+      new_key = value_answer_key.split('_')
+      
+      answer_value_temp = AnswerValue.new
+
+      if (new_key.length < 3 )
+        new_key[2] = current_user.user_name
+        answer_value_temp.from = current_user
+      end
     
-    answer_value_temp = AnswerValue.new
+      answer_value_temp.questionnaire_id = params[:questionnaire]
+      answer_value_temp.who              = User.find_by_user_name(new_key[2])
 
-    if (new_key.length < 3 )
-      new_key[2] = current_user.user_name
-      answer_value_temp.from = current_user
+      answer_value_temp.answer_id        = value_answers[value_answer_key]
+      answer_value_temp.value            = 0
+
+      answer_value_temp.save
     end
-  
-    answer_value_temp.questionnaire_id = params[:questionnaire]
-    answer_value_temp.who              = User.find_by_user_name(new_key[2])
 
-    answer_value_temp.answer_id        = value_answers[value_answer_key]
-    answer_value_temp.value            = 0
+    user_questionnaire = UserQuestionnaire.new
 
-    answer_value_temp.save
+    user_questionnaire.user = current_user
+    user_questionnaire.questionnaire = Questionnaire.find(params[:questionnaire])
+
+    user_questionnaire.save
+
+    rescue ActiveRecord::RecordNotUnique => e
+      redirect_to questionnaires_url
   end
-
-  user_questionnaire = UserQuestionnaire.new
-
-  user_questionnaire.user = current_user
-  user_questionnaire.questionnaire = Questionnaire.find(params[:questionnaire])
-
-  user_questionnaire.save
-
-  rescue ActiveRecord::RecordNotUnique => e
-    redirect_to questionnaires_url
-end
 
   # DELETE /questionnaires/1
   # DELETE /questionnaires/1.json
   def destroy
     @questionnaire = Questionnaire.find(params[:id])
+    authorize @questionnaire
     @questionnaire.destroy
 
     respond_to do |format|

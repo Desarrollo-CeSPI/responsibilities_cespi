@@ -20,6 +20,8 @@ es:
         created_at: Creada
         question_type: Tipo de pregunta
         name: Nombre
+      user:
+        administrator: 'Administrador'
    
 
     errors:
@@ -42,9 +44,11 @@ es:
         title: Preguntas
       scoring:
         title: Puntajes
-     
       show:
         title: Cuestionario
+    users:
+      index:
+        title: Usuarios
 
     scaffold:
       are_you_sure: ¿Estás seguro?
@@ -82,6 +86,11 @@ es:
     passwords:
       updated: 'Se cambió su contraseña exitosamente.'
       updated_not_active: 'Se cambió su contraseña exitosamente.'
+    registrations:
+      users:
+        sign_up: 'Ud se ha registrado exitosamente.'
     sign_in: 'Iniciar sesión'
     sign_out: 'Cerrar sesión'
+    
+
 

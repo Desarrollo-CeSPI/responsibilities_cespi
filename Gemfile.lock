@@ -73,6 +73,8 @@ GEM
       railties
     orm_adapter (0.4.0)
     polyglot (0.3.3)
+    pundit (0.2.0)
+      rails (~> 3.0)
     rack (1.4.4)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -148,6 +150,7 @@ DEPENDENCIES
   libv8 (~> 3.11.8.3)
   mysql2
   nice_generators
+  pundit (~> 0.2.0)
   rails
   rails-i18n
   sass-rails (~> 3.2.3)

@@ -7,7 +7,7 @@
     <th><%= t('activerecord.attributes.user.first_name') %></th>
     <th><%= t('activerecord.attributes.user.last_name') %></th>
     <th><%= t('activerecord.attributes.user.email') %></th>
-    <th>rol</th>
+    <th><%= t('activerecord.attributes.user.administrator') %></th>
     <th></th>
   </tr>
   </thead>
@@ -18,7 +18,7 @@
         <td><%= user.first_name %></td>
         <td><%= user.last_name %></td>
         <td><%= user.email %></td>
-        <td>TO-DO</td>
+        <td><%= user.is_admin? ? 'Sí' : 'No' %></td>
         <td>
           <%= link_to t('views.scaffold.edit_html'), edit_user_path(user), class: 'btn btn-mini' %>
           <%= link_to t('views.scaffold.delete_html'), user, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-mini btn-danger' %>
