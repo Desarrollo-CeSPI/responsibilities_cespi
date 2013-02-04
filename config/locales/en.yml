@@ -8,6 +8,7 @@
         name: Nombre
         question_type: Tipo de pregunta
         created_at: Creada
+     
 
   # VIEWS
   views:

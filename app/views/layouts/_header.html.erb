@@ -5,16 +5,16 @@
       <nav>
         <ul class="nav pull-right">
           <% if user_signed_in? %>
-            <li><%= link_to "Questions", questions_path %></li>
-            <li><%= link_to "Questionnaires", questionnaires_path %></li>
+            <li><%= link_to "Preguntas", questions_path %></li>
+            <li><%= link_to "Custionarios", questionnaires_path %></li>
             <li><%= link_to "Contestar", "/answer_questionnaire" %></li>
             <li><%= link_to "Administrador", "/answer_questionnaire_admin" %></li>
             <li><%= link_to "Categorías", '/categories' %></li>
-            <li><%= link_to "Users", '/users_administration' %></li>
-            <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
+            <li><%= link_to "Usuarios", '/users_administration' %></li>
+            <li class="logout"><%= link_to('Cerrar Sesión', destroy_user_session_path, method: :delete) %></li>
           <% else %>
-            <li><%= link_to('Login', new_user_session_path)  %></li> 
-            <li><%= link_to('Register', new_user_registration_path)  %></li>
+            <li><%= link_to('Iniciar Sesión', new_user_session_path)  %></li> 
+            <li><%= link_to('Registrarse', new_user_registration_path)  %></li>
           <% end %>
         </ul>
       </nav>

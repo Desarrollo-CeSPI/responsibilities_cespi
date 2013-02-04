@@ -1,7 +1,6 @@
 <%= render partial: 'layouts/page_header', locals: { title: t('views.questionnaires.show.title') } %>
 
-<section id="general-information">
-  <p id="notice"><%= notice %></p>
+<section id="general-information" class="well">
   <p>
     <strong><%=t 'activerecord.attributes.questionnaire.name'%></strong>
       <%= @questionnaire.name %>

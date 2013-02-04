@@ -9,6 +9,9 @@ es:
   # ACTIVERECORD
   activerecord:
     attributes:
+      answer:
+        name: Nombre
+        percentage: Porcentaje
       questionnaire:
         date_from: Fecha de apertura
         date_to: Fecha de cierre
@@ -17,6 +20,7 @@ es:
         created_at: Creada
         question_type: Tipo de pregunta
         name: Nombre
+   
 
     errors:
       models:
@@ -28,6 +32,7 @@ es:
   # VIEWS
   views:
     questionnaires:
+      empty: No hay ningún cuestionario activo.
       index:
         title: Cuestionarios
       questions:
@@ -35,7 +40,11 @@ es:
         empty: Este cuestionario no tiene ninguna pregunta.
         propias: Preguntas acerca tuyo
         title: Preguntas
-      empty: No hay ningún cuestionario activo.
+      scoring:
+        title: Puntajes
+     
+      show:
+        title: Cuestionario
 
     scaffold:
       are_you_sure: ¿Estás seguro?
@@ -46,14 +55,17 @@ es:
       scoring_html: <i class="icon-white icon-ok"></i> Puntuar
       edit_html: <i class="icon-edit"></i> Editar
       new_html: <i class="icon-white icon-plus"></i> Nuevo
+      questionnaires: cuestionario
     categories:
       empty: No hay categorías
       index:
-        title: categorías
+        title: Categorías
     questions:
       empty: No hay preguntas
       index:
         title: Preguntas
+      edit: 
+        title: Editar Pregunta
 
   devise:
     failure:
@@ -72,3 +84,4 @@ es:
       updated_not_active: 'Se cambió su contraseña exitosamente.'
     sign_in: 'Iniciar sesión'
     sign_out: 'Cerrar sesión'
+

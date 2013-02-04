@@ -1,3 +1,6 @@
+
+<%= render partial: 'layouts/page_header', locals: { title: t('views.questionnaires.scoring.title') } %>
+
 <table class="table table-stripped">
   <thead>
     <th> <%= t'Usuario' %> </th>
@@ -5,12 +8,19 @@
     <th> <%= t'Categoría' %> </th>
   </thead>
   <tbody>
-    <% @user_questionnaires.each do |uq| %>
+    
+      <% @user_questionnaires.each do |uq| %>
       <tr>
         <td><%= uq.user.first_name %> <%= uq.user.last_name %></td>
         <td><%= uq.scoring %></td>
         <td><%= uq.get_category %></td>
       </tr>
-    <% end %>
+      <% end %>
+
+    
   </tbody>
 </table>
+
+<div class="form-actions">
+      <%= link_to t('views.scaffold.back_html'), questionnaires_path, class: 'btn secondary' %>
+</div>
